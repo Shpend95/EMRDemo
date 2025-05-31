@@ -1,0 +1,45 @@
+
+       /* getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//iframe[@id='modalframe']")));
+        driver.switchTo().frame("//iframe[@id='modalframe']");
+
+        try {
+            boolean flag = false;
+            try {
+                flag = appointmentFlowPage.noOpenings.isDisplayed();
+            } catch (NoSuchElementException e) {
+                flag = false; // Element not found, treat as false
+            }
+
+            System.out.println("No openings displayed: " + flag);
+
+            if (flag=true) {
+                driver.switchTo().defaultContent();
+                appointmentFlowPage.cancelBtn.click();
+                appointmentFlowPage.cancelBTn2.click();
+            } else {
+
+
+                getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='searchResults']")));
+
+                List<WebElement> dayAndDate = driver.findElements(By.xpath("/html/body[@class='body_top']/div[3]/div/table/tbody/tr/td/div/a"));
+
+                for (WebElement date : dayAndDate) {
+                    String timeTitle = date.getAttribute("title");
+                    if (timeTitle.equals("Choose 12:00 pm")) {
+                        date.click();
+
+                    }
+                }
+            }
+
+
+        } catch (NoSuchElementException e) {
+            System.out.println("Element not found: " + e.getMessage());
+        } catch (TimeoutException e) {
+            System.out.println("Timed out waiting for element: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Unexpected exception: " + e.getMessage());
+        }
+    }
+
+        */

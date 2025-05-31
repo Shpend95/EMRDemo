@@ -29,7 +29,7 @@ public class AppointmentFlowPage extends CommonMethods {
     @FindBy(xpath = "//*[@id='theaddform']/div/div[6]/input")
     public WebElement saveBtn;
 
-    @FindBy(xpath = "//div[@id='searchResults']/div/table/tbody/tr/td")
+    @FindBy(xpath = "//td[contains(text(),'No openings were found for this period.')]")
     public WebElement noOpenings;
 
     @FindBy(xpath = "(//button[@class='btn btn-danger btn-sm'])[1]")
